@@ -56,6 +56,7 @@
     line-height: 1.5;
     opacity: 0.8;
     font-weight: 400;
+    color: #fff;
 
     @media (max-width: 768px) {
       text-align: center;
