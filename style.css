@@ -214,6 +214,7 @@
     max-width: calc(100% - 4rem);
     transition: grid-template-columns var(--speed) var(--easing);
     transition: grid-template-columns var(--speed) var(--easing), -ms-grid-columns var(--speed) var(--easing);
+    opacity: 0.7;
   }
 
   li {
