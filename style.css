@@ -170,13 +170,17 @@
       font-weight: 300;
       text-transform: uppercase;
       font-family: monospace;
+      z-index: 2;
     }
     svg {
       width: 18px;
       fill: none;
+      z-index: 2;
     }
 
     p {
+      position: relative;
+      z-index: 2;
       font-size: 13px;
       text-wrap: balance;
       line-height: 1.25;
@@ -189,6 +193,7 @@
       height: 18px;
       line-height: 1;
       color: inherit;
+      z-index: 2;
       
 
       &:is(:focus-visible, :hover) {
@@ -247,6 +252,190 @@
       filter: drop-shadow(0 12px 16px rgb(0 0 0 / 0.22));
       z-index: 1;
     }
+
+    &.gohan-card .bg-art {
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center center;
+      -webkit-mask: radial-gradient(100% 100% at 100% 0, #fff, #0000);
+              mask: radial-gradient(100% 100% at 100% 0, #fff, #0000);
+      opacity: 0.9;
+    }
+
+    &.gohan-card .gohan-figure {
+      position: absolute;
+      inset: 25px;
+      width: calc(100% - 50px);
+      height: calc(100% - 50px);
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%) scale(1.18);
+      object-fit: contain;
+      object-position: center 18%;
+      -webkit-mask: none;
+              mask: none;
+      filter: drop-shadow(0 12px 16px rgb(0 0 0 / 0.22));
+      z-index: 1;
+    }
+
+    &.goten-card .bg-art {
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center center;
+      -webkit-mask: radial-gradient(100% 100% at 100% 0, #fff, #0000);
+              mask: radial-gradient(100% 100% at 100% 0, #fff, #0000);
+      opacity: 0.9;
+    }
+
+    &.goten-card .goten-figure {
+      position: absolute;
+      inset: 25px;
+      width: calc(100% - 50px);
+      height: calc(100% - 50px);
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%) scale(1.15);
+      object-fit: contain;
+      object-position: center 20%;
+      -webkit-mask: none;
+              mask: none;
+      filter: drop-shadow(0 12px 16px rgb(0 0 0 / 0.22));
+      z-index: 1;
+    }
+
+    &.trunks-card .bg-art {
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center center;
+      -webkit-mask: radial-gradient(100% 100% at 100% 0, #fff, #0000);
+              mask: radial-gradient(100% 100% at 100% 0, #fff, #0000);
+      opacity: 0.9;
+    }
+
+    &.trunks-card .trunks-figure {
+      position: absolute;
+      inset: 25px;
+      width: calc(100% - 50px);
+      height: calc(100% - 50px);
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%) scale(1.12);
+      object-fit: contain;
+      object-position: center 18%;
+      -webkit-mask: none;
+              mask: none;
+      filter: drop-shadow(0 12px 16px rgb(0 0 0 / 0.22));
+      z-index: 1;
+    }
+
+    &.future-trunks-card .bg-art {
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center center;
+      -webkit-mask: radial-gradient(100% 100% at 100% 0, #fff, #0000);
+              mask: radial-gradient(100% 100% at 100% 0, #fff, #0000);
+      opacity: 0.9;
+    }
+
+    &.future-trunks-card .future-trunks-figure {
+      position: absolute;
+      inset: 25px;
+      width: calc(100% - 50px);
+      height: calc(100% - 50px);
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%) scale(1.1);
+      object-fit: contain;
+      object-position: center 16%;
+      -webkit-mask: none;
+              mask: none;
+      filter: drop-shadow(0 12px 16px rgb(0 0 0 / 0.22));
+      z-index: 1;
+    }
+
+    &.bulma-card .bg-art {
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center center;
+      -webkit-mask: radial-gradient(100% 100% at 100% 0, #fff, #0000);
+              mask: radial-gradient(100% 100% at 100% 0, #fff, #0000);
+      opacity: 0.9;
+    }
+
+    &.bulma-card .bulma-figure {
+      position: absolute;
+      inset: 25px;
+      width: calc(100% - 50px);
+      height: calc(100% - 50px);
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%) scale(1.14);
+      object-fit: contain;
+      object-position: center 18%;
+      -webkit-mask: none;
+              mask: none;
+      filter: drop-shadow(0 12px 16px rgb(0 0 0 / 0.22));
+      z-index: 1;
+    }
+
+    &.chichi-card .bg-art {
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center center;
+      -webkit-mask: radial-gradient(100% 100% at 100% 0, #fff, #0000);
+              mask: radial-gradient(100% 100% at 100% 0, #fff, #0000);
+      opacity: 0.9;
+    }
+
+    &.chichi-card .chichi-figure {
+      position: absolute;
+      inset: 25px;
+      width: calc(100% - 50px);
+      height: calc(100% - 50px);
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%) scale(1.16);
+      object-fit: contain;
+      object-position: center 18%;
+      -webkit-mask: none;
+              mask: none;
+      filter: drop-shadow(0 12px 16px rgb(0 0 0 / 0.22));
+      z-index: 1;
+    }
+  }
+
+  article.goku-card .goku-figure,
+  article.gohan-card .gohan-figure,
+  article.goten-card .goten-figure,
+  article.trunks-card .trunks-figure,
+  article.future-trunks-card .future-trunks-figure,
+  article.bulma-card .bulma-figure,
+  article.chichi-card .chichi-figure {
+    position: absolute !important;
+    inset: 25px !important;
+    width: calc(100% - 50px) !important;
+    height: calc(100% - 50px) !important;
+    left: 50% !important;
+    top: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    object-fit: contain !important;
+    object-position: center 18% !important;
+    -webkit-mask: none !important;
+            mask: none !important;
+    filter: drop-shadow(0 12px 16px rgb(0 0 0 / 0.22)) !important;
+    z-index: 1 !important;
   }
   /* gotta use some Math on the container really */
   /* width is "ideal" 7 * 80px + 6 * gap + say 300px or whatever the ideal width is */
