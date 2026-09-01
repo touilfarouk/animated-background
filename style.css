@@ -79,9 +79,16 @@
   li img {
     filter: grayscale(1) brightness(1.5);
     scale: 1.1;
-    transition-property: filter, scale;
+    transition-property: filter, scale, opacity;
     transition-duration: calc(var(--speed) * 1.2);
     transition-timing-function: var(--easing);
+    opacity: 0.84;
+  }
+
+  li[data-active='true'] {
+    z-index: 1;
+    transform: translateY(-4px);
+    box-shadow: 0 18px 32px rgb(0 0 0 / 0.18);
   }
 
   [data-active='true'] :is(a, p, h3, svg) {
@@ -94,6 +101,7 @@
   [data-active='true'] img {
     filter: grayscale(0) brightness(1);
     scale: 1;
+    opacity: 1;
     transition-delay: calc(var(--speed) * 0.25);
   }
 
@@ -109,7 +117,7 @@
     flex-direction: column;
     justify-content: flex-end;
     gap: 1rem;
-    padding-inline: calc(var(--base) * 0.5 - 9px);
+    padding-inline: clamp(0.8rem, 1.15vw, 1.1rem);
     padding-bottom: 1rem;
     overflow: hidden;
 
@@ -226,6 +234,9 @@
     min-width: var(--base);
     border-radius: 8px;
     border: 1px solid color-mix(in hsl, canvas, canvasText 50%);
+    transition: transform var(--speed) var(--easing),
+      box-shadow var(--speed) var(--easing),
+      border-color var(--speed) var(--easing);
   }
 }
 
