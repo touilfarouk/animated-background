@@ -1,3 +1,36 @@
+const config = {
+  theme: 'system',
+};
+
+const themeButtons = [...document.querySelectorAll('[data-theme-option]')];
+
+const updateThemeUI = () => {
+  themeButtons.forEach((button) => {
+    const isActive = button.dataset.themeOption === config.theme;
+    button.classList.toggle('is-active', isActive);
+    button.setAttribute('aria-pressed', String(isActive));
+  });
+};
+
+const update = () => {
+  document.documentElement.dataset.theme = config.theme;
+  updateThemeUI();
+};
+
+const sync = () => {
+  if (!document.startViewTransition) return update();
+  document.startViewTransition(() => update());
+};
+
+themeButtons.forEach((button) => {
+  button.addEventListener('click', () => {
+    config.theme = button.dataset.themeOption;
+    sync();
+  });
+});
+
+update();
+
 const list = document.querySelector('ul');
 const items = [...list.querySelectorAll('li')];
 

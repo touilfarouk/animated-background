@@ -13,62 +13,6 @@
     padding-block: 2rem;
   }
 
-  .theme-switcher {
-    position: fixed;
-    top: 1rem;
-    right: 1rem;
-    z-index: 20;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.4rem;
-    padding: 0.35rem;
-    border-radius: 999px;
-    background: color-mix(in srgb, canvas 80%, transparent);
-    border: 1px solid color-mix(in hsl, canvasText 20%, transparent);
-    box-shadow: 0 10px 22px rgb(0 0 0 / 0.15);
-    backdrop-filter: blur(10px);
-  }
-
-  .theme-option {
-    appearance: none;
-    border: 0;
-    cursor: pointer;
-    border-radius: 999px;
-    background: transparent;
-    color: inherit;
-    padding: 0.4rem 0.7rem;
-    font: inherit;
-    font-size: 0.72rem;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-    opacity: 0.7;
-    transition: opacity 180ms ease, background 180ms ease, color 180ms ease;
-  }
-
-  .theme-option.is-active {
-    background: color-mix(in srgb, canvasText 12%, canvas);
-    opacity: 1;
-  }
-  video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    display: block;
-    width: 100%;
-    height: 100%;
-    -o-object-fit: cover;
-       object-fit: cover;
-  }
-  .overlay {
-    position: absolute;
-    z-index: -1;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0,0,0,0.5);
-  }
-
   h1,
   p {
     margin: 0;
@@ -93,7 +37,6 @@
     line-height: 1.5;
     opacity: 0.8;
     font-weight: 400;
-    color: #fff;
 
     @media (max-width: 768px) {
       text-align: center;
@@ -116,16 +59,9 @@
   li img {
     filter: grayscale(1) brightness(1.5);
     scale: 1.1;
-    transition-property: filter, scale, opacity;
+    transition-property: filter, scale;
     transition-duration: calc(var(--speed) * 1.2);
     transition-timing-function: var(--easing);
-    opacity: 0.84;
-  }
-
-  li[data-active='true'] {
-    z-index: 1;
-    transform: translateY(-4px);
-    box-shadow: 0 18px 32px rgb(0 0 0 / 0.18);
   }
 
   [data-active='true'] :is(a, p, h3, svg) {
@@ -138,7 +74,6 @@
   [data-active='true'] img {
     filter: grayscale(0) brightness(1);
     scale: 1;
-    opacity: 1;
     transition-delay: calc(var(--speed) * 0.25);
   }
 
@@ -154,7 +89,7 @@
     flex-direction: column;
     justify-content: flex-end;
     gap: 1rem;
-    padding-inline: clamp(0.8rem, 1.15vw, 1.1rem);
+    padding-inline: calc(var(--base) * 0.5 - 9px);
     padding-bottom: 1rem;
     overflow: hidden;
 
@@ -211,36 +146,10 @@
       inset: 0;
       width: 100%;
       height: 100%;
-      object-fit: cover;
-      object-position: center center;
+      -o-object-fit: cover;
+         object-fit: cover;
       -webkit-mask: radial-gradient(100% 100% at 100% 0, #fff, #0000);
               mask: radial-gradient(100% 100% at 100% 0, #fff, #0000);
-      transform: scale(1.15);
-      transform-origin: center center;
-    }
-
-    &.goku-card .bg-art {
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center center;
-      -webkit-mask: radial-gradient(100% 100% at 100% 0, #fff, #0000);
-              mask: radial-gradient(100% 100% at 100% 0, #fff, #0000);
-      opacity: 0.9;
-    }
-
-    &.goku-card .goku-figure {
-      inset: 25px;
-      width: calc(100% - 50px);
-      height: calc(100% - 50px);
-      left: 50%;
-      transform: translateX(-50%) scale(1.05);
-      object-fit: contain;
-      object-position: center center;
-      -webkit-mask: none;
-              mask: none;
-      filter: drop-shadow(0 12px 16px rgb(0 0 0 / 0.22));
     }
   }
   /* gotta use some Math on the container really */
@@ -286,7 +195,6 @@
     max-width: calc(100% - 4rem);
     transition: grid-template-columns var(--speed) var(--easing);
     transition: grid-template-columns var(--speed) var(--easing), -ms-grid-columns var(--speed) var(--easing);
-    opacity: 0.7;
   }
 
   li {
@@ -297,9 +205,6 @@
     min-width: var(--base);
     border-radius: 8px;
     border: 1px solid color-mix(in hsl, canvas, canvasText 50%);
-    transition: transform var(--speed) var(--easing),
-      box-shadow var(--speed) var(--easing),
-      border-color var(--speed) var(--easing);
   }
 }
 
