@@ -46,15 +46,15 @@ const setActiveItem = (target) => {
   });
 
   const columns = items
-    .map((_, i) => (i === index ? '10fr' : '1fr'))
+    .map((_, i) => (i === index ? 'minmax(220px, 6fr)' : 'minmax(48px, 0.85fr)'))
     .join(' ');
 
   list.style.gridTemplateColumns = columns;
 };
 
 const resync = () => {
-  const width = Math.max(...items.map((item) => item.offsetWidth));
-  list.style.setProperty('--article-width', String(width));
+  const nextWidth = Math.max(...items.map((item) => item.offsetWidth));
+  list.style.setProperty('--article-width', String(nextWidth));
 };
 
 items.forEach((item) => {
